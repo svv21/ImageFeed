@@ -28,9 +28,9 @@ extension ImagesListViewController {
         cell.dateLabel.text = dateFormatter.string(from: Date())
         
         if indexPath.row % 2 == 0 {
-            cell.likeButton.setImage(UIImage(named: "No Active"), for: .normal)
-        } else {
             cell.likeButton.setImage(UIImage(named: "Active"), for: .normal)
+        } else {
+            cell.likeButton.setImage(UIImage(named: "No Active"), for: .normal)
         }
     }
 }
@@ -54,4 +54,16 @@ extension ImagesListViewController: UITableViewDataSource {
 
 extension ImagesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { }
+    
+    func tableView (_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let image = UIImage(named: photosName[indexPath.row]) else { return 0 }
+        let imageInsets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
+        
+        let imageViewWidth = tableView.bounds.width - (imageInsets.left + imageInsets.right)
+        let imageViewHight = image.size.height * (imageViewWidth / image.size.width)
+        
+        let cellHeight = imageViewHight + (imageInsets.top + imageInsets.bottom)
+        return cellHeight
+    }
 }
+
