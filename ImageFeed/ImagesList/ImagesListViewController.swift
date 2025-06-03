@@ -5,13 +5,6 @@ final class ImagesListViewController: UIViewController {
     
     private let photosName: [String] = Array(0..<20).map{"\($0)"}
     
-    private lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        formatter.timeStyle = .none
-        return formatter
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,14 +17,7 @@ extension ImagesListViewController {
     func configCell (for cell: ImagesListCell, with indexPath: IndexPath) {
         guard let image = UIImage(named: photosName[indexPath.row]) else { return }
         
-        cell.cellImage.image = image
-        cell.dateLabel.text = dateFormatter.string(from: Date())
-        
-        if indexPath.row % 2 == 0 {
-            cell.likeButton.setImage(UIImage(named: "Active"), for: .normal)
-        } else {
-            cell.likeButton.setImage(UIImage(named: "No Active"), for: .normal)
-        }
+        cell.config(image: image, indexPath: indexPath, cell: cell)
     }
 }
 
@@ -59,10 +45,20 @@ extension ImagesListViewController: UITableViewDelegate {
         guard let image = UIImage(named: photosName[indexPath.row]) else { return 0 }
         let imageInsets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
         
-        let imageViewWidth = tableView.bounds.width - (imageInsets.left + imageInsets.right)
-        let imageViewHight = image.size.height * (imageViewWidth / image.size.width)
+        var imageViewHight = 0.0
+        var cellHeight = 0.0
         
-        let cellHeight = imageViewHight + (imageInsets.top + imageInsets.bottom)
+        let imageViewWidth = tableView.bounds.width - (imageInsets.left + imageInsets.right)
+        
+        if image.size.width != 0 {
+            imageViewHight = image.size.height * (imageViewWidth / image.size.width)
+        } else {
+            // skip this image
+            return 0
+        }
+        
+        cellHeight = imageViewHight + (imageInsets.top + imageInsets.bottom)
+        
         return cellHeight
     }
 }
