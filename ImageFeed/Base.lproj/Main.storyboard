@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pyG-wf-0BG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H8d-qb-HTA">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -206,6 +206,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehO-9X-hcN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-642" y="216"/>
+        </scene>
+        <!--Single Image View Controller-->
+        <scene sceneID="ESB-36-7cE">
+            <objects>
+                <viewController id="H8d-qb-HTA" customClass="SingleImageViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JWr-vW-u3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="nnT-It-S48">
+                                <rect key="frame" x="0.0" y="62" width="402" height="778"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SBf-hN-w5l"/>
+                        <color key="backgroundColor" name="YP Black (iOS)"/>
+                        <constraints>
+                            <constraint firstItem="SBf-hN-w5l" firstAttribute="trailing" secondItem="nnT-It-S48" secondAttribute="trailing" id="Bco-zX-8JG"/>
+                            <constraint firstItem="nnT-It-S48" firstAttribute="leading" secondItem="SBf-hN-w5l" secondAttribute="leading" id="VBB-l6-mKN"/>
+                            <constraint firstItem="nnT-It-S48" firstAttribute="top" secondItem="SBf-hN-w5l" secondAttribute="top" id="eDe-V3-HaJ"/>
+                            <constraint firstItem="SBf-hN-w5l" firstAttribute="bottom" secondItem="nnT-It-S48" secondAttribute="bottom" id="ytd-JJ-BKo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="nnT-It-S48" id="cCW-Uq-35g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BaD-z5-yF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="216"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TZz-CZ-KxH">
