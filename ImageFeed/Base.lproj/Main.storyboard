@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pyG-wf-0BG">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -99,13 +99,36 @@
                             <constraint firstItem="mNl-a5-MTv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="npF-my-eVZ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="tab_editorial_active" id="7dC-Vi-qlO"/>
                     <connections>
                         <outlet property="tableView" destination="mNl-a5-MTv" id="hHP-53-eV8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60.305343511450381" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="-661" y="-432"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jSn-AK-8Io">
+            <objects>
+                <tabBarController id="pyG-wf-0BG" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WvW-ok-9UN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="YP White (iOS)"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="YP Black (iOS)"/>
+                        </tabBarAppearance>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="u0c-Ip-f9Z"/>
+                        <segue destination="9uq-s0-S2u" kind="relationship" relationship="viewControllers" id="lpr-4P-JAd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQZ-Tt-1TG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1494" y="-108"/>
         </scene>
         <!--Profile-->
         <scene sceneID="vdd-Pd-T6c">
@@ -171,6 +194,7 @@
                             <constraint firstItem="sYD-RL-d1E" firstAttribute="trailing" secondItem="LJA-ZT-3vm" secondAttribute="trailing" id="ybM-Gx-VAr"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="tab_profile_active" id="E6E-P9-DZO"/>
                     <connections>
                         <outlet property="loginNameLabel" destination="MrD-gx-AIn" id="NLV-iC-p4d"/>
                         <outlet property="logoutButton" destination="LJA-ZT-3vm" id="OMo-gq-oxj"/>
@@ -181,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehO-9X-hcN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-622.38805970149247" y="-106.40732265446223"/>
+            <point key="canvasLocation" x="-642" y="216"/>
         </scene>
     </scenes>
     <resources>
@@ -190,6 +214,8 @@
         <image name="Photo" width="70" height="70"/>
         <image name="Rectangle 168" width="343" height="30"/>
         <image name="ipad.and.arrow.forward" width="20" height="22"/>
+        <image name="tab_editorial_active" width="30" height="30"/>
+        <image name="tab_profile_active" width="30" height="30"/>
         <namedColor name="YP Black (iOS)">
             <color red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
