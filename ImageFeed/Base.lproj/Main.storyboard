@@ -81,7 +81,6 @@
                                             <outlet property="dateLabel" destination="pFw-9P-MYH" id="UQG-SV-tPv"/>
                                             <outlet property="gradientImage" destination="w1h-0t-aC0" id="1yv-3F-ReQ"/>
                                             <outlet property="likeButton" destination="7aR-R9-CDy" id="0gW-bn-QXc"/>
-                                            <segue destination="H8d-qb-HTA" kind="show" id="vyf-4P-gEQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -103,6 +102,7 @@
                     <navigationItem key="navigationItem" id="qBu-jM-RbB"/>
                     <connections>
                         <outlet property="tableView" destination="mNl-a5-MTv" id="hHP-53-eV8"/>
+                        <segue destination="H8d-qb-HTA" kind="show" identifier="ShowSingleImage" id="kwN-6I-eT7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BaD-z5-yF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="258" y="216"/>
+            <point key="canvasLocation" x="1179" y="-432"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TZz-CZ-KxH">
