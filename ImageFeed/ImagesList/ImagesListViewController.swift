@@ -18,7 +18,7 @@ final class ImagesListViewController: UIViewController {
             guard let viewController = segue.destination as? SingleImageViewController,
                   let indexPath = sender as? IndexPath
             else {
-                assertionFailure("Invalid segue destination or sender")
+                assertFailure()
                 return
             }
             
@@ -28,6 +28,10 @@ final class ImagesListViewController: UIViewController {
         } else {
             super.prepare(for: segue, sender: sender)
         }
+    }
+    
+    func assertFailure() {
+        assertionFailure("Invalid segue destination or sender")
     }
 }
 

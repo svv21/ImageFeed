@@ -1,10 +1,23 @@
 import UIKit
 
 final class ProfileViewController: UIViewController {
+    private let profileImageView = UIImageView()
+    private let nameLabel = UILabel()
+    private let loginNameLabel = UILabel()
+    private let profileStatusLabel = UILabel()
+    private let logoutButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let profileImageView = UIImageView()
+        drawAvatar()
+        drawNameLabel()
+        drawLoginNameLabel()
+        drawProfileStatusLabel()
+        drawLogoutButton()
+    }
+    
+    private func drawAvatar() {
         profileImageView.image = UIImage(named: "Photo")
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(profileImageView)
@@ -14,8 +27,9 @@ final class ProfileViewController: UIViewController {
             profileImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             profileImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 76)
         ])
-        
-        let nameLabel = UILabel()
+    }
+    
+    private func drawNameLabel() {
         nameLabel.text = "Екатерина Новикова"
         nameLabel.textColor = .ypWhite
         nameLabel.font = .systemFont(ofSize: 23, weight: .bold)
@@ -25,8 +39,9 @@ final class ProfileViewController: UIViewController {
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 8)
         ])
-        
-        let loginNameLabel = UILabel()
+    }
+    
+    private func drawLoginNameLabel() {
         loginNameLabel.text = "@ekaterina_nov"
         loginNameLabel.textColor = .ypGray
         loginNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
@@ -36,8 +51,9 @@ final class ProfileViewController: UIViewController {
             loginNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             loginNameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8)
         ])
-        
-        let profileStatusLabel = UILabel()
+    }
+    
+    private func drawProfileStatusLabel() {
         profileStatusLabel.text = "Hello, world!"
         profileStatusLabel.textColor = .ypWhite
         profileStatusLabel.font = .systemFont(ofSize: 13, weight: .regular)
@@ -47,7 +63,9 @@ final class ProfileViewController: UIViewController {
             profileStatusLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             profileStatusLabel.topAnchor.constraint(equalTo: loginNameLabel.bottomAnchor, constant: 8)
         ])
-        
+    }
+    
+    private func drawLogoutButton() {
         let logoutButton = UIButton.systemButton(
             with: UIImage(named: "logout button")!,
             target: self,
@@ -65,5 +83,6 @@ final class ProfileViewController: UIViewController {
     }
     
     @objc private func didTapLogoutButton() {
+        // TODO: implement this function
     }
 }
